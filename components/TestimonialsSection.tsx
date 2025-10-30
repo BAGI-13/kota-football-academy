@@ -91,7 +91,7 @@ const StarRating = () => (
   </div>
 );
 
-// --- Testimonial Card Component (waisa hi hai) ---
+// --- Testimonial Card Component (YAHAN BUG FIX KIYA HAI) ---
 const TestimonialCard = ({
   quote,
   name,
@@ -107,8 +107,9 @@ const TestimonialCard = ({
     <div className="bg-white p-6 rounded-lg shadow-lg h-full flex flex-col justify-between">
       <div>
         <StarRating />
+        {/* FIX: Plain quotes (" ") ko HTML entities se replace kiya */}
         <blockquote className="text-slate-700 italic text-lg my-4">
-          "{quote}"
+          &ldquo;{quote}&rdquo;
         </blockquote>
       </div>
       <div className="flex items-center gap-4 mt-4">
