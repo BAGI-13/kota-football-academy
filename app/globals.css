@@ -27,3 +27,15 @@ body {
   /* Yeh line update kar di hai taaki default font Geist Sans ho */
   font-family: var(--font-sans);
 }
+
+/* --- Embla Carousel Styles (Yahan add kiya) --- */
+.embla {
+  overflow: hidden; /* Zaroori hai slides ko hide karne ke liye */
+}
+.embla__container {
+  display: flex; /* Slides ko ek line mein rakhta hai */
+}
+.embla__slide {
+  position: relative;
+  /* Width hum component mein Tailwind se control kar rahe hain */
+}

@@ -1,58 +1,108 @@
 // components/Header.tsx
-"use client"; // State use karne ke liye zaroori hai
+"use client";
 
-import React, { useState } from 'react'; // useState ko import kiya
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/teams', label: 'Teams' },
+  { href: '/contact', label: 'Contact' },
+];
 
 const Header = () => {
-  // Menu ke state ko track karne ke liye
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 50);
+
+      if (isMenuOpen) {
+        setIsVisible(true);
+        return;
+      }
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY, isMenuOpen]);
+
+  const pathname = usePathname();
 
   return (
-    // 'relative' add kiya taaki mobile menu ko position kar sakein
-    <header className="w-full relative">
-      <nav className="container mx-auto flex items-center justify-between p-6">
+    <header
+      className={`w-full sticky top-0 z-50 transition-transform duration-300
+                 ${isVisible ? 'translate-y-0' : '-translate-y-full'}
+
+                 ${/* --- YAHAN CHANGE HUA HAI --- */ ''}
+                 ${isScrolled
+                    ? 'bg-gradient-to-r from-white via-orange-100 to-orange-200 md:bg-transparent md:bg-none' // <-- md:bg-none ADD KIYA
+                    : 'bg-transparent'
+                 }
+                `}
+    >
+      <nav
+        className={`container mx-auto flex items-center justify-between p-6
+                   transition-all duration-300 ease-in-out
+                   ${isScrolled
+                      ? 'md:mt-2 md:rounded-full md:bg-gradient-to-r md:from-white md:via-orange-100 md:to-orange-200 md:shadow-xl'
+                      : 'md:mt-0 md:rounded-none md:bg-transparent md:shadow-none'
+                   }
+                  `}
+      >
         {/* Logo */}
         <div className="text-2xl font-bold">
           <Link href="/">Kota Football Academy</Link>
         </div>
 
-        {/* --- Desktop Navigation Links --- */}
-        {/* 'hidden' (mobile par) aur 'md:flex' (tablet/pc par) add kiya */}
+        {/* --- Desktop Navigation Links (No Change) --- */}
         <div className="hidden md:flex gap-6">
-          <Link href="/" className="hover:text-orange-700 transition-colors">
-            Home
-          </Link>
-          <Link
-            href="/about"
-            className="hover:text-orange-700 transition-colors"
-          >
-            About
-          </Link>
-          <Link
-            href="/teams"
-            className="hover:text-orange-700 transition-colors"
-          >
-            Teams
-          </Link>
-          <Link
-            href="/contact"
-            className="hover:text-orange-700 transition-colors"
-          >
-            Contact
-          </Link>
+          {navLinks.map((link) => {
+            const isActive =
+              (link.href === '/' && pathname === '/') ||
+              (link.href !== '/' && pathname.startsWith(link.href));
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`relative transition-colors
+                           ${
+                             isActive
+                               ? 'text-orange-700 font-bold'
+                               : 'hover:text-orange-700'
+                           }
+                          `}
+              >
+                {link.label}
+                {isActive && (
+                  <span className="absolute bottom-[-4px] left-0 w-full h-0.5 bg-orange-700" />
+                )}
+              </Link>
+            );
+          })}
         </div>
 
-        {/* --- Mobile Menu Button (Hamburger) --- */}
-        {/* 'md:hidden' add kiya taaki yeh sirf mobile par dikhe */}
+        {/* --- Mobile Menu Button (No Change) --- */}
         <div className="md:hidden">
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)} // State toggle karega
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="text-slate-800 focus:outline-none"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              // Close Icon (X)
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -68,7 +118,6 @@ const Header = () => {
                 />
               </svg>
             ) : (
-              // Hamburger Icon
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -89,41 +138,33 @@ const Header = () => {
       </nav>
 
       {/* --- Mobile Menu (Dropdown) --- */}
-      {/* Yeh tabhi dikhega jab isMenuOpen === true hoga */}
       {isMenuOpen && (
-        <div
-          className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg z-20"
-        >
-          {/* Mobile links (vertical) */}
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg z-20">
           <div className="flex flex-col items-center gap-4 py-6">
-            <Link
-              href="/"
-              className="hover:text-orange-700 transition-colors"
-              onClick={() => setIsMenuOpen(false)} // Link click par menu band
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="hover:text-orange-700 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              href="/teams"
-              className="hover:text-orange-700 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Teams
-            </Link>
-            <Link
-              href="/contact"
-              className="hover:text-orange-700 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </Link>
+            {navLinks.map((link) => {
+              const isActive =
+                (link.href === '/' && pathname === '/') ||
+                (link.href !== '/' && pathname.startsWith(link.href));
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`relative text-lg transition-colors
+                             ${
+                               isActive
+                                 ? 'text-orange-700 font-bold'
+                                 : 'hover:text-orange-700'
+                             }
+                            `}
+                >
+                  {link.label}
+                  {isActive && (
+                    <span className="absolute bottom-[-4px] left-0 w-full h-0.5 bg-orange-700" />
+                  )}
+                </Link>
+              );
+            })}
           </div>
         </div>
       )}
