@@ -21,7 +21,7 @@ const FacilitiesSection = () => {
             {/* Image Column (Mobile par pehle, Desktop par bhi pehle) */}
             <div className="relative w-full h-72 rounded-lg shadow-lg overflow-hidden">
               <Image
-                src="/placeholder-facility-1.jpg" // Note: Yeh image abhi nahi hai
+                src="/Full-SizeGrassPitch.jpg" // Note: Yeh image abhi nahi hai
                 alt="Full-Size Grass Pitch"
                 layout="fill"
                 objectFit="cover"
@@ -51,7 +51,7 @@ const FacilitiesSection = () => {
             {/* Image Column (Mobile par pehle, Desktop par Aakhir mein) */}
             <div className="relative w-full h-72 rounded-lg shadow-lg overflow-hidden md:order-last">
               <Image
-                src="/placeholder-facility-2.jpg" // Note: Yeh image abhi nahi hai
+                src="/Floodlit Training Area.png" // Note: Yeh image abhi nahi hai
                 alt="Floodlit Training Area"
                 layout="fill"
                 objectFit="cover"
@@ -81,7 +81,7 @@ const FacilitiesSection = () => {
             {/* Image Column (Mobile par pehle, Desktop par bhi pehle) */}
             <div className="relative w-full h-72 rounded-lg shadow-lg overflow-hidden">
               <Image
-                src="/placeholder-facility-3.jpg" // Note: Yeh image abhi nahi hai
+                src="/Physiotherapy Room.jpg" // Note: Yeh image abhi nahi hai
                 alt="Physiotherapy Room"
                 layout="fill"
                 objectFit="cover"

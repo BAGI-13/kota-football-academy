@@ -46,7 +46,7 @@ export default function AboutPage() {
         {/* Image Column */}
         <div className="relative w-full h-96 rounded-lg shadow-xl overflow-hidden">
           <Image
-            src="/placeholder-about-1.jpg" // Note: Yeh image abhi nahi hai
+            src="/ourstory.png" // Note: Yeh image abhi nahi hai
             alt="Academy Team"
             layout="fill"
             objectFit="cover"
@@ -90,7 +90,7 @@ export default function AboutPage() {
           </div>
           <div className="relative w-full h-80 rounded-lg shadow-xl overflow-hidden">
             <Image
-              src="/placeholder-about-2.jpg" // Note: Yeh image abhi nahi hai
+              src="/mission.png" // Note: Yeh image abhi nahi hai
               alt="Our Mission"
               layout="fill"
               objectFit="cover"
@@ -103,7 +103,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative w-full h-80 rounded-lg shadow-xl overflow-hidden md:order-last">
             <Image
-              src="/placeholder-about-3.jpg" // Note: Yeh image abhi nahi hai
+              src="/vission.png" // Note: Yeh image abhi nahi hai
               alt="Our Vision"
               layout="fill"
               objectFit="cover"

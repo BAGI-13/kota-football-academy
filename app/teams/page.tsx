@@ -77,7 +77,7 @@ export default function TeamsPage() {
           title="Senior Team"
           ageGroup="Ages 18+"
           description="Our flagship team competes at the highest regional levels. This program is for elite players focusing on advanced tactics, peak physical conditioning, and professional pathways."
-          imageUrl="/placeholder-team-1.jpg" // Note: Yeh image abhi nahi hai
+          imageUrl="/senior.jpeg" // Note: Yeh image abhi nahi hai
           imageLeft={false}
           focusPoints={[
             { icon: <FaTrophy />, text: 'Competitive League Play' }, // Ab yeh kaam karega
@@ -89,9 +89,9 @@ export default function TeamsPage() {
         {/* --- Junior Academy (U-18) --- */}
         <TeamSection
           title="Junior Academy"
-          ageGroup="Under-18 (U-18)"
+          ageGroup="Under-7 (U-7)"
           description="This is the bridge to our senior team. Players refine their positional skills, learn high-intensity drills, and are prepared for the physical demands of senior football."
-          imageUrl="/placeholder-team-2.jpg" // Note: Yeh image abhi nahi hai
+          imageUrl="/junior.jpg" // Note: Yeh image abhi nahi hai
           imageLeft={true} // Image Left Layout
           focusPoints={[
             { icon: <FaPlayCircle />, text: 'Positional Specialization' },
@@ -105,7 +105,7 @@ export default function TeamsPage() {
           title="Youth Development"
           ageGroup="Under-12 (U-12)"
           description="The foundation of our academy. Young players learn the fundamentals of football, including dribbling, passing, and shooting, in a fun, positive, and encouraging environment."
-          imageUrl="/placeholder-team-3.jpg" // Note: Yeh image abhi nahi hai
+          imageUrl="/youth.jpg" // Note: Yeh image abhi nahi hai
           imageLeft={false}
           focusPoints={[
             { icon: <FaPlayCircle />, text: 'Fundamental Skills' },

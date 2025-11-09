@@ -49,19 +49,20 @@ const CoachesSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-8">
           {/* Hum abhi placeholder images use kar rahe hain */}
           <CoachCard
-            name="Rohan Sharma"
-            title="Head Coach (UEFA A License)"
-            imageUrl="/placeholder-coach-1.jpg" // Note: Yeh image abhi nahi hai
+            name="GURMAIL SINGH"
+            title="Head Coach (AFC B License 
+             More than 10 years experience)"
+            imageUrl="/g.png" // Note: Yeh image abhi nahi hai
           />
           <CoachCard
-            name="Vikram Singh"
+            name="NITIN JANGRA"
             title="Youth Development (AFC B License)"
-            imageUrl="/placeholder-coach-2.jpg"
+            imageUrl="/n.png"
           />
           <CoachCard
-            name="Anjali Mehta"
-            title="Fitness & Conditioning Expert"
-            imageUrl="/placeholder-coach-3.jpg"
+            name="AMAN KUMAR"
+            title="Fitness & Conditioning Expert (AIFF D License/ BPED graduate)"
+            imageUrl="/aman.png"
           />
         </div>
       </div>

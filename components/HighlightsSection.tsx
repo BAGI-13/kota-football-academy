@@ -130,7 +130,7 @@ const ITEMS: CollageItemProps[] = [
   {
     title: "State Champions 2024",
     description: "U-18 team clinched the state title in a thrilling final.",
-    imageUrl: "/placeholder-highlight-1.jpg",
+    imageUrl: "/FULLHOUSE.jpg",
     aspect: "16/9",
     priority: true,
     notes: [
@@ -141,83 +141,87 @@ const ITEMS: CollageItemProps[] = [
   {
     title: "National Camp Call-up",
     description: "Ravi Prakash (U-16) invited to national camp.",
-    imageUrl: "/placeholder-highlight-2.jpg",
+    imageUrl: "/nationalcamp.jpg",
     aspect: "3/4",
     notes: [
       { text: "Hard work pays!", position: "right", rotate: "slight-right" },
     ],
   },
   {
-    title: "Media Feature",
-    description: "Covered by a leading daily for youth development.",
-    imageUrl: "/placeholder-highlight-3.jpg",
+     title: "Study Support",
+     description: "Academics × sports hours introduced.",
+    
+    
+    imageUrl: "/media2.png",
     aspect: "4/3",
-    notes: [
-      { text: "Front page!", position: "top", rotate: "slight-left" },
-      { text: "City spotlight", position: "bottom", rotate: "slight-right" },
-    ],
+    notes: [{ text: "After practice", position: "top-right", rotate: "slight-right" }],
   },
   {
     title: "All-India Tournament",
     description: "Faced top academies; great learning curve.",
-    imageUrl: "/placeholder-highlight-4.jpg",
+    imageUrl: "/all.jpg",
     aspect: "1/1",
     notes: [{ text: "Quarter-finals", position: "top-right", rotate: "none" }],
   },
   {
     title: "Grassroots Bootcamp",
     description: "U-12 fundamentals across 3 districts.",
-    imageUrl: "/placeholder-highlight-5.jpg",
+    imageUrl: "/grassroot.jpg",
     aspect: "4/3",
     notes: [{ text: "150+ kids", position: "bottom-left", rotate: "slight-left" }],
   },
   {
     title: "High-Performance Clinic",
     description: "10-day intensive by invited coaches.",
-    imageUrl: "/placeholder-highlight-6.jpg",
+    imageUrl: "/High-Performance.png",
     aspect: "16/9",
     notes: [{ text: "GPS tracking", position: "top-right", rotate: "slight-right" }],
   },
   {
     title: "Sports Science",
     description: "Injury prevention & analytics partnership.",
-    imageUrl: "/placeholder-highlight-7.jpg",
+    imageUrl: "/sports.png",
     aspect: "3/4",
     notes: [{ text: "Screenings done", position: "left", rotate: "slight-left" }],
   },
   {
     title: "Women’s Team",
     description: "U-17 girls reached state semi-finals.",
-    imageUrl: "/placeholder-highlight-8.jpg",
+    imageUrl: "/women.jpg",
     aspect: "1/1",
     notes: [{ text: "Proud moment", position: "top-left", rotate: "none" }],
   },
   {
     title: "Alumni Debut",
     description: "Former captain signed by a national league club.",
-    imageUrl: "/placeholder-highlight-9.jpg",
+    imageUrl: "/alumini.jpg",
     aspect: "4/3",
     notes: [{ text: "Pro contract!", position: "right", rotate: "slight-right" }],
   },
   {
     title: "Community Clinics",
     description: "Free weekend training in rural blocks.",
-    imageUrl: "/placeholder-highlight-10.jpg",
+    imageUrl: "/rural.png",
     aspect: "16/9",
     notes: [{ text: "Outreach drive", position: "bottom", rotate: "slight-left" }],
   },
   {
-    title: "Study Support",
-    description: "Academics × sports hours introduced.",
-    imageUrl: "/placeholder-highlight-11.jpg",
+    title: "Media Feature",
+    description: "Covered by a leading daily for youth development.",
+    imageUrl: "/media.jpg",
     aspect: "3/4",
-    notes: [{ text: "After practice", position: "top-right", rotate: "slight-right" }],
+    notes: [
+      { text: "Front page!", position: "top", rotate: "slight-left" },
+      { text: "City spotlight", position: "bottom", rotate: "slight-right" },
+    ],
+    
+    
   },
   {
     title: "Facility Upgrade",
     description: "New turf, lights, and recovery room.",
-    imageUrl: "/placeholder-highlight-12.jpg",
-    aspect: "4/3",
+    imageUrl: "/facility.png",
+    aspect: "1/1",
     notes: [{ text: "Match-ready!", position: "bottom-right", rotate: "none" }],
   },
 ];
