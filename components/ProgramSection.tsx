@@ -23,7 +23,7 @@ const ProgramCard = ({
   >
     {/* Icon */}
     <div className="flex justify-center mb-4">
-      <span className="text-5xl text-orange-500">{icon}</span>
+      <span className="text-5xl text-crimson">{icon}</span>
     </div>
     <h3 className="text-xl font-bold text-slate-800 mb-3">{title}</h3>
     <p className="text-slate-600">{description}</p>

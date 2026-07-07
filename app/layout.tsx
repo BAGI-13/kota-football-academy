@@ -1,9 +1,10 @@
 // app/layout.tsx
-import type { Metadata } from "next"; // 1. Yeh import pehle se hai
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { siteConfig } from "@/lib/siteConfig";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,10 +16,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// 2. Yahan ': Metadata' type add kiya
 export const metadata: Metadata = {
-  title: "Kota Football Academy",
-  description: "Official website of the Kota Football Academy",
+  title: siteConfig.name,
+  description: siteConfig.description,
 };
 
 export default function RootLayout({
@@ -29,8 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen 
-                   bg-gradient-to-r from-white via-orange-100 to-orange-200 text-slate-800`} // <-- Gradient yahan rehna zaroori hai
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen bg-white text-slate-800`}
       >
         <Header />
         <main className="flex-grow">{children}</main>

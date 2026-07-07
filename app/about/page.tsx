@@ -19,7 +19,7 @@ const ValueCard = ({
   // Card ka style badal diya (backdrop-blur)
   <div className="bg-white/70 backdrop-blur-sm rounded-lg shadow-lg p-6 text-center">
     <div className="flex justify-center mb-4">
-      <span className="text-4xl text-orange-500">{icon}</span>
+      <span className="text-4xl text-crimson">{icon}</span>
     </div>
     <h3 className="text-xl font-bold text-slate-800 mb-2">{title}</h3>
     <p className="text-slate-600">{description}</p>
@@ -76,7 +76,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="flex items-center gap-4 mb-3">
-              <span className="text-4xl text-orange-500">
+              <span className="text-4xl text-crimson">
                 <FaBullseye />
               </span>
               <h2 className="text-3xl font-bold text-slate-800">Our Mission</h2>
@@ -112,7 +112,7 @@ export default function AboutPage() {
           </div>
           <div className="md:order-first">
             <div className="flex items-center gap-4 mb-3">
-              <span className="text-4xl text-orange-500">
+              <span className="text-4xl text-crimson">
                 <FaEye />
               </span>
               <h2 className="text-3xl font-bold text-slate-800">Our Vision</h2>

@@ -25,11 +25,11 @@ const StatItem = ({
 
   return (
     <div ref={ref} className="flex flex-col items-center">
-      <div className="text-6xl text-orange-500 mb-3">{icon}</div>
+      <div className="text-6xl text-crimson mb-3">{icon}</div>
       <span className="text-5xl font-bold">
         {/* Jab 'inView' true hoga, tabhi CountUp start hoga */}
         {inView ? <CountUp end={end} duration={3} /> : '0'}
-        <span className="text-orange-500">+</span>
+        <span className="text-crimson">+</span>
       </span>
       <span className="text-lg mt-2">{label}</span>
     </div>

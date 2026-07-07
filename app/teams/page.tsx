@@ -39,7 +39,7 @@ const TeamSection = ({
 
     {/* Content Column */}
     <div className={`${imageLeft ? 'md:order-last' : 'md:order-first'}`}>
-      <span className="text-orange-600 font-semibold">{ageGroup}</span>
+      <span className="text-crimson font-semibold">{ageGroup}</span>
       <h2 className="text-3xl font-bold text-slate-800 mb-4">{title}</h2>
       <p className="text-lg text-slate-600 mb-6">{description}</p>
       
@@ -47,7 +47,7 @@ const TeamSection = ({
       <div className="space-y-3">
         {focusPoints.map((point, index) => (
           <div key={index} className="flex items-center gap-3">
-            <span className="text-xl text-orange-500">{point.icon}</span>
+            <span className="text-xl text-crimson">{point.icon}</span>
             <span className="text-slate-700 text-lg">{point.text}</span>
           </div>
         ))}
@@ -126,8 +126,8 @@ export default function TeamsPage() {
         </p>
         <Link
           href="/contact"
-          className="inline-block px-8 py-3 bg-orange-600 text-white rounded-lg font-semibold 
-                     text-lg shadow-md hover:bg-orange-700 hover:scale-105 
+          className="inline-block px-8 py-3 bg-crimson text-white rounded-lg font-semibold 
+                     text-lg shadow-md hover:bg-crimson-dark hover:scale-105 
                      transition-all duration-300 ease-in-out"
         >
           Contact Us Now

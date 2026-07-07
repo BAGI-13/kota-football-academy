@@ -149,7 +149,7 @@
 //     aria-label="Previous slide"
 //   >
 //     {/* text-xl add kiya */}
-//     <FaChevronLeft className="text-orange-600 text-xl" />
+//     <FaChevronLeft className="text-crimson text-xl" />
 //   </button>
 // );
 
@@ -171,7 +171,7 @@
 //     aria-label="Next slide"
 //   >
 //     {/* text-xl add kiya */}
-//     <FaChevronRight className="text-orange-600 text-xl" />
+//     <FaChevronRight className="text-crimson text-xl" />
 //   </button>
 // );
 
@@ -393,7 +393,7 @@ const PrevButton = ({
     disabled={disabled}
     aria-label="Previous slide"
   >
-    <FaChevronLeft className="text-orange-600 text-xl" />
+    <FaChevronLeft className="text-crimson text-xl" />
   </button>
 );
 
@@ -413,7 +413,7 @@ const NextButton = ({
     disabled={disabled}
     aria-label="Next slide"
   >
-    <FaChevronRight className="text-orange-600 text-xl" />
+    <FaChevronRight className="text-crimson text-xl" />
   </button>
 );
 

@@ -1,13 +1,12 @@
 // app/contact/page.tsx
 "use client"; // Form hook use karne ke liye yeh zaroori hai
 
-import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-// Naye icons import kiye
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { siteConfig } from '@/lib/siteConfig';
 
 export default function ContactPage() {
-  const [state, handleSubmit] = useForm("mwprjwkr"); // Aapka Formspree ID
+  const [state, handleSubmit] = useForm(siteConfig.formspreeIds.contact);
 
   if (state.succeeded) {
     return (
@@ -41,29 +40,29 @@ export default function ContactPage() {
           {/* Direct Contact Info (Updated) */}
           <div className="space-y-6">
             <a
-              href="tel:+917042605095"
+              href={`tel:${siteConfig.phone}`}
               className="flex items-center gap-4 group"
             >
-              <FaPhone className="text-orange-600 text-xl" />
-              <span className="text-lg text-slate-800 group-hover:text-orange-600">
-                +91 7042605095
+              <FaPhone className="text-crimson text-xl" />
+              <span className="text-lg text-slate-800 group-hover:text-crimson">
+                {siteConfig.phone}
               </span>
             </a>
             <a
-              href="mailto:rajan1782003@gmail.com"
+              href={`mailto:${siteConfig.email}`}
               className="flex items-center gap-4 group"
             >
-              <FaEnvelope className="text-orange-600 text-xl" />
-              <span className="text-lg text-slate-800 group-hover:text-orange-600">
-                info@kotafootball.com
+              <FaEnvelope className="text-crimson text-xl" />
+              <span className="text-lg text-slate-800 group-hover:text-crimson">
+                {siteConfig.email}
               </span>
             </a>
             <div className="flex items-start gap-4">
-              <FaMapMarkerAlt className="text-orange-600 text-xl mt-1" />
+              <FaMapMarkerAlt className="text-crimson text-xl mt-1" />
               <span className="text-lg text-slate-800">
-                Academy Ground, GGN
+                {siteConfig.address.line1}
                 <br />
-                Gurugram, Haryana 122001
+                {siteConfig.address.line2}
               </span>
             </div>
           </div>
@@ -71,7 +70,7 @@ export default function ContactPage() {
           {/* --- Map (Updated for Gurugram) --- */}
           <div className="mt-10">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112349.80000331002!2d76.95304918712175!3d28.423160295629007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x2cf5fe8e5c64b1e!2sGurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1730320645063!5m2!1sen!2sin"
+              src={siteConfig.mapEmbedUrl}
               width="100%"
               height="250"
               style={{ border: 0 }}
@@ -105,7 +104,7 @@ export default function ContactPage() {
                 id="name"
                 name="name"
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 p-3"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-crimson focus:ring-crimson p-3"
               />
             </div>
 
@@ -122,7 +121,7 @@ export default function ContactPage() {
                 id="email"
                 name="email"
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 p-3"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-crimson focus:ring-crimson p-3"
               />
               <ValidationError
                 prefix="Email"
@@ -145,7 +144,7 @@ export default function ContactPage() {
                 id="contact_number"
                 name="contact_number"
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 p-3"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-crimson focus:ring-crimson p-3"
               />
             </div>
 
@@ -162,7 +161,7 @@ export default function ContactPage() {
                 type="tel"
                 id="whatsapp_number"
                 name="whatsapp_number"
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 p-3"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-crimson focus:ring-crimson p-3"
               />
             </div>
 
@@ -179,7 +178,7 @@ export default function ContactPage() {
                 name="message"
                 rows={4}
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500 p-3"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-crimson focus:ring-crimson p-3"
               ></textarea>
               <ValidationError
                 prefix="Message"
@@ -194,8 +193,8 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={state.submitting}
-                className="w-full px-8 py-3 bg-orange-600 text-white rounded-lg font-semibold 
-                           text-lg shadow-md hover:bg-orange-700 hover:scale-105 
+                className="w-full px-8 py-3 bg-crimson text-white rounded-lg font-semibold 
+                           text-lg shadow-md hover:bg-crimson-dark hover:scale-105 
                            transition-all duration-300 ease-in-out
                            disabled:opacity-50 disabled:cursor-not-allowed"
               >

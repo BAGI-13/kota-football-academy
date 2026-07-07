@@ -11,6 +11,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Academy Brand Tokens — Crimson Red / Charcoal Black / White */
+  --color-crimson: #DC143C;
+  --color-crimson-dark: #A50E2D;
+  --color-charcoal: #1C1C1C;
+  --color-charcoal-light: #2D2D2D;
 }
 
 @media (prefers-color-scheme: dark) {

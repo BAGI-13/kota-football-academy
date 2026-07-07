@@ -31,7 +31,7 @@ const FacilitiesSection = () => {
             {/* Content Column */}
             <div className="p-4">
               <div className="flex items-center gap-4 mb-3">
-                <span className="text-4xl text-orange-500">
+                <span className="text-4xl text-crimson">
                   <GiSoccerField />
                 </span>
                 <h3 className="text-2xl font-bold text-slate-800">
@@ -61,7 +61,7 @@ const FacilitiesSection = () => {
             {/* Content Column (Mobile par baad mein, Desktop par Pehle) */}
             <div className="p-4 md:order-first">
               <div className="flex items-center gap-4 mb-3">
-                <span className="text-4xl text-orange-500">
+                <span className="text-4xl text-crimson">
                   <FaLightbulb />
                 </span>
                 <h3 className="text-2xl font-bold text-slate-800">
@@ -91,7 +91,7 @@ const FacilitiesSection = () => {
             {/* Content Column */}
             <div className="p-4">
               <div className="flex items-center gap-4 mb-3">
-                <span className="text-4xl text-orange-500">
+                <span className="text-4xl text-crimson">
                   <FaBriefcaseMedical />
                 </span>
                 <h3 className="text-2xl font-bold text-slate-800">
